@@ -14,8 +14,8 @@ class GitLabSpider(scrapy.Spider):
     # Define output folders and log file paths
     OUTPUT_FOLDER = "output/ScrapData"
     LOG_FOLDER = "log"
-    TEXT_FILE = os.path.join(OUTPUT_FOLDER, "text_data.jsonl")
-    TABLE_FILE = os.path.join(OUTPUT_FOLDER, "table_data.jsonl")
+    TEXT_FILE = os.path.join(OUTPUT_FOLDER, "text_data.json")
+    TABLE_FILE = os.path.join(OUTPUT_FOLDER, "table_data.json")
     LOG_FILE = os.path.join(LOG_FOLDER, "scrapdata_log.txt")
 
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
@@ -119,7 +119,7 @@ class GitLabSpider(scrapy.Spider):
                 json_line = json.dumps(data, ensure_ascii=False)
                 f.write(json_line + "\n")
         except Exception as e:
-            logging.error(f" Error saving JSONL to {file_path}: {e}")
+            logging.error(f" Error saving JSON to {file_path}: {e}")
 
     def follow_internal_links(self, response):
         for href in response.xpath("//a[@href]/@href").getall():
