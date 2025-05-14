@@ -1,5 +1,5 @@
 '''
-semantic search, final answers based on retrieved documents, cosine similarity to prioritize relevant chunks
+semantic search, final answers based on retrieved documents
 '''
 import sys
 import time
