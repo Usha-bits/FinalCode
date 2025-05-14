@@ -68,7 +68,7 @@ class EmbeddingQueryEngine:
         self.chroma_client = get_chroma_client()
         self.vector_store = get_vector_store()
         if self.vector_store is None:
-            logging.error("🚨 Vector store is not initialized.")
+            logging.error(" Vector store is not initialized.")
             raise RuntimeError("Vector store could not be initialized.")
 
         self.embedding_function = EmbeddingSingleton.get_embedding_function()
