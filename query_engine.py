@@ -1,5 +1,6 @@
-## re-ranking for low semantic chunk, Cosine Similarity Version of retrieve_and_answer
-## search for table related data
+'''
+semantic search, final answers based on retrieved documents, cosine similarity to prioritize relevant chunks
+'''
 import sys
 import time
 import json
