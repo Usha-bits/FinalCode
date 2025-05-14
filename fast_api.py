@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-# from query_engine_new4 import retrieve_and_generate_answer
 from query_engine import QueryEngine
 
 
@@ -10,10 +9,6 @@ class User_input(BaseModel):
 app = FastAPI()
 
 @app.post('/ask')
-# def display(user_input: User_input):
-#     return "I am doing fantastic, how can I help you today?"
-# async def ask_question(request: dict):
-#question = request.get("question", "")
 async def ask_question(user_input: User_input):
     question = user_input.question.strip()
     if not question:
