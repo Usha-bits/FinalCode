@@ -62,7 +62,7 @@ def clean_text_data(file_path, output_path):
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(cleaned, f, ensure_ascii=False, indent=4)
-    print(f"✅ Cleaned text data saved to {output_path}")
+    print(f" Cleaned text data saved to {output_path}")
 
 def clean_table_data(file_path, output_path):
     """Process and clean table-based entries."""
